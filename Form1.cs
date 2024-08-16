@@ -77,22 +77,20 @@ namespace Notepad
 
                 StreamReader document = new StreamReader(FilePath);
                 string line;
+                textBox1.Clear();
 
                 while ((line = document.ReadLine()) != null)
                 {
-                    textBox1.Text = line;
+                    textBox1.AppendText(line + Environment.NewLine);
                 }
 
                 document.Close();
 
             }
-
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
 
             using (StreamWriter writer = new StreamWriter(FilePath))
             {
